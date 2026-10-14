@@ -1,0 +1,33 @@
+name: Build desktop apps
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, macos-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Prepare files
+        shell: bash
+        run: |
+          mkdir -p desktop/public desktop/build
+          cp -r public/. desktop/public/
+          cp assets/icon-only.png desktop/build/icon.png
+      - name: Build
+        working-directory: desktop
+        run: |
+          npm install --no-audit --no-fund
+          npx electron-builder --publish never
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bods-ai-${{ matrix.os }}
+          path: |
+            desktop/dist/*.exe
+            desktop/dist/*.dmg
+            desktop/dist/*.AppImage
