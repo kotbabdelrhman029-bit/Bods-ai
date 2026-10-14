@@ -1,0 +1,19 @@
+{
+  "name": "bods-ai-desktop",
+  "version": "1.0.0",
+  "description": "bods AI",
+  "author": "عبدالرحمن قطب",
+  "main": "main.js",
+  "private": true,
+  "scripts": { "start": "electron .", "dist": "electron-builder --publish never" },
+  "build": {
+    "appId": "ai.bods.desktop",
+    "productName": "bods AI",
+    "files": ["main.js", "public/**"],
+    "directories": { "buildResources": "build" },
+    "win": { "target": ["nsis", "portable"] },
+    "mac": { "target": ["dmg"], "category": "public.app-category.productivity" },
+    "linux": { "target": ["AppImage"], "category": "Utility" }
+  },
+  "devDependencies": { "electron": "latest", "electron-builder": "latest" }
+}

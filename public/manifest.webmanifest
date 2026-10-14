@@ -1,0 +1,38 @@
+{
+  "name": "bods ai",
+  "short_name": "bods ai",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "background_color": "#eef2f7",
+  "theme_color": "#2457f5",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "id": "/",
+  "orientation": "portrait",
+  "categories": [
+    "productivity",
+    "utilities"
+  ],
+  "description": "bods AI — مساعدك الذكي للشات والكود والصور والصوت"
+}

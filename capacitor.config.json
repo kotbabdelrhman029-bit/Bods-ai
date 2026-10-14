@@ -1,0 +1,7 @@
+{
+  "appId": "ai.bods.app",
+  "appName": "bods AI",
+  "webDir": "public",
+  "server": { "androidScheme": "https" },
+  "android": { "backgroundColor": "#0b1020" }
+}
